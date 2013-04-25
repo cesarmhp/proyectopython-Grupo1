@@ -1,0 +1,19 @@
+#Proyecto final
+def menu ():  
+    while True:
+        print("""==============MENU===============|
+|0.-Salir                        |
+|1.-Cargar archivo de inventario |
+|2.-Agregar artículos            |
+|3.-Eliminar artículos           |
+|4.-Generar archivo de inventario|""")
+        print("¿Qué eliges?")
+        try:
+            opcion=input(":_")
+            if opcion<0 and opcion>4:
+                input("Opción no válida")
+            else:
+                break;
+        except ValueError:
+            input("Sólo se aceptan números del 0 al 4 como opciones")
+        return o
