@@ -23,6 +23,9 @@ numproducto[len(numproducto)-1]=int(numproducto[len(numproducto)-1])
 
 for i in range(len(productos)):
     productos[i]=productos[i][0]
+
+for i in range(len(productos)):
+    inventario[productos[i]]=numproducto[i]
 #=========================================TERMINA LECTURA DEL ARCHIVO Y CONVERSIÓN A DICCIONARIO=================
 
 def login():
