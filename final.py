@@ -34,7 +34,7 @@ def login():
             return False
             break
 
-def menu ():  
+def menu ():# Se imprimira un menu con las diferentes opciones que tendra el usuario, de las cuales elegira la que sea mejor para el
     while True:
         print("""==============MENU===============|
 |0.-Salir                        |
@@ -45,7 +45,7 @@ def menu ():
         print("¿Cuál opción eliges?") 
         try:
             opcion=input(":_")
-            if opcion<0 and opcion>4: #Si la opción no se encuentra en el rango marca error
+            if opcion<0 and opcion>4: #Si la opción no se encuentra en el rango marcara error
                 input("Opción no válida")
             else:
                 break;
@@ -59,7 +59,7 @@ log=login()
 if log==True:
     print("Bienvenido")
     print()
-    #AQUI ADENTO DEL "IF" VA TODO EL PROGRAMA
+    #AQUI ADENTRO DEL "IF" VA TODO EL PROGRAMA
     menu()
     
     if opcion == 3:
