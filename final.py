@@ -51,7 +51,7 @@ def menu ():
                 break;
         except ValueError:
             input("Sólo se aceptan números del 0 al 4 como opciones")
-        return o
+        return opcion
         #Esta es la funcion de opciones del menu
 
 log=login()
