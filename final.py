@@ -59,3 +59,4 @@ log=login()
 if log==True:
     print("Bienvenido")
     #AQUI ADENTO DEL "IF" VA TODO EL PROGRAMA
+    menu()
