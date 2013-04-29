@@ -2,8 +2,6 @@
 #===========================================EMPIEZA PARTE DE LECTURA DEL ARCHIVO Y CONVERTIRLO A DICCIONARIO=========
 productos=[]
 numproducto=[]
-
-
 inventario=open("inventario.txt","r")
 productos=inventario.readlines()
 inventario.close
@@ -11,7 +9,6 @@ inventario={}
 
 for i in range(len(productos)):
     separador=productos[i].split(" ")
-    print(separador)
     productos[i]=separador
 
 for i in range(len(productos)-1):
@@ -20,12 +17,17 @@ for i in range(len(productos)-1):
     numproducto[len(numproducto)-1]=numproducto[len(numproducto)-1][:len(numproducto[len(numproducto)-1])]
     numproducto[i]=int(numproducto[i])
 numproducto[len(numproducto)-1]=int(numproducto[len(numproducto)-1])
-
+print(numproducto[len(numproducto)-1])
+print(productos)
 for i in range(len(productos)):
-    productos[i]=productos[i][0]
+    productos[i]=productos[i][0]  
+print(productos)
+print(numproducto)
 
-for i in range(len(productos)):
+for i in range(len(productos)-1):
     inventario[productos[i]]=numproducto[i]
+inventario[len(productos)-1]=numproducto[len(numproducto)-1]
+print(inventario)
 #=========================================TERMINA LECTURA DEL ARCHIVO Y CONVERSIÓN A DICCIONARIO=================
 
 def login():
