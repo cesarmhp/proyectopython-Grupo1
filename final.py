@@ -73,14 +73,5 @@ if log==True:
 
     except ValueError:
         print("Escribe solo el nombre del artículo")
-        
-    if opcion == 4: #generar archivo
-    try:
-        archiescri = open("inventario.txt","w")
-        for i in lista:
-            archiescri.write(str(i)+"\n")
-        archiescri.close()
-        print ("El inventario se ha guardado en el archivo")
-    except IOError:
-        print("Error. No se puede escribir en el archivo")
-    print("\n")
+    if opcion==0:
+        break
