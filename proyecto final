@@ -15,5 +15,5 @@ def menu ():
             else:
                 break;
         except ValueError:
-            input("Sólo se aceptan números del 0 al 4 como opciones")
+            print("Sólo se aceptan números del 0 al 4 como opciones")
         return o
