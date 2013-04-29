@@ -11,7 +11,7 @@ def menu ():
         try:
             opcion=input(":_")
             if opcion<0 and opcion>4:
-                input("Opción no válida")
+                print("Opción no válida")
             else:
                 break;
         except ValueError:
