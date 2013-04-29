@@ -58,8 +58,10 @@ log=login()
 
 if log==True:
     print("Bienvenido")
+    print()
     #AQUI ADENTO DEL "IF" VA TODO EL PROGRAMA
     menu()
+    
     if opcion == 3:
     try:
         c = input("\n¿Qué articulo deseas eliminar?\n>>")
