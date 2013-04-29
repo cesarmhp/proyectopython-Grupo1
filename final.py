@@ -34,26 +34,28 @@ def login():
             return False
             break
 
+def menu ():  
+    while True:
+        print("""==============MENU===============|
+|0.-Salir                        |
+|1.-Cargar archivo de inventario |
+|2.-Agregar artículos            |
+|3.-Eliminar artículos           |
+|4.-Generar archivo de inventario|""")
+        print("¿Qué eliges?")
+        try:
+            opcion=input(":_")
+            if opcion<0 and opcion>4:
+                input("Opción no válida")
+            else:
+                break;
+        except ValueError:
+            input("Sólo se aceptan números del 0 al 4 como opciones")
+        return o
+        #Esta es la funcion de opciones del menu
+
 log=login()
 
 if log==True:
     print("Bienvenido")
     #AQUI ADENTO DEL "IF" VA TODO EL PROGRAMA
-
-
-    def menu ():  
-        while True:
-            print("""==============MENU===============|
-    |0.-Salir                        |
-    |1.-Cargar archivo de inventario |
-    |2.-Agregar artículos            |
-    |3.-Eliminar artículos           |
-    |4.-Generar archivo de inventario|""")
-            print("¿Qué eliges?")
-            try:
-                opcion=input(":_")
-                if opcion==0:
-                    break;
-            except ValueError:
-                print("Sólo se aceptan números del 0 al 4 como opciones")
-    menu()
