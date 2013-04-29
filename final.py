@@ -60,3 +60,8 @@ if log==True:
     print("Bienvenido")
     #AQUI ADENTO DEL "IF" VA TODO EL PROGRAMA
     menu()
+    if opcion == 3:
+    try:
+        c = input("\n¿Qué articulo deseas eliminar?\n>>")
+        del inventario[c]
+        print("El artículo ha sido removido del inventario")
