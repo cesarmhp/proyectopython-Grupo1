@@ -1,19 +1,51 @@
 #Proyecto final
-def menu ():  
-    while True:
-        print("""==============MENU===============|
-|0.-Salir                        |
-|1.-Cargar archivo de inventario |
-|2.-Agregar artículos            |
-|3.-Eliminar artículos           |
-|4.-Generar archivo de inventario|""")
-        print("¿Qué eliges?")
-        try:
-            opcion=input(":_")
-            if opcion<0 and opcion>4:
-                print("Opción no válida")
+
+
+def login():
+    acceso=0
+    intento=0
+    while acceso==0:
+        aceptados={"admin":"admin2013", "server":"05server"}
+        usuario=input("Usuario: ")
+        password=input("Password: ")
+        while intento <= 3:
+            if usuario in aceptados and password==aceptados[usuario]:
+                print("")
+                return True
             else:
-                break;
-        except ValueError:
-            print("Sólo se aceptan números del 0 al 4 como opciones")
-        return o
+                intento=intento+1
+                print("")
+                print("Datos incorrectos")
+                print("")
+            break
+        if intento>=3:
+            print("")
+            print(" *  Las cuentas se han bloqueado porque has intentado mas de 3 veces.   *")
+            return False
+            break
+
+log=login()
+
+if log==True:
+    print("Bienvenido")
+    #AQUI ADENTO DEL "IF" VA TODO EL PROGRAMA
+
+
+    def menu ():  
+        while True:
+            print("""==============MENU===============|
+    |0.-Salir                        |
+    |1.-Cargar archivo de inventario |
+    |2.-Agregar artículos            |
+    |3.-Eliminar artículos           |
+    |4.-Generar archivo de inventario|""")
+            print("¿Qué eliges?")
+            try:
+                opcion=input(":_")
+                if opcion<0 and opcion>4:
+                    print("Opción no válida")
+                else:
+                    break;
+            except ValueError:
+                print("Sólo se aceptan números del 0 al 4 como opciones")
+            return o
