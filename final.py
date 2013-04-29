@@ -11,7 +11,7 @@ def login():
         articulos2=[]#Creo variable en blanco                                          #2 nombres de usuario con su respectiva contraseña 
         for i in range(len(articulos)):#Elimino los \n que me apareceran.              # Y tambien la contraseña debe de estar separada por un espacio despues del usuario
             articulos2.append(articulos[i][0:len(articulos[i])-1])                     #en la misma linea que esta. Ejem: Usuario contraseña
-        palabras=""                                                                     #                                 Usuario2 contraseña2
+        palabras=""                                                                    #                                 Usuario2 contraseña2
         for i in range(len(articulos2)):
             palabras=palabras+articulos[i]
         palabras=palabras.split()
@@ -42,10 +42,10 @@ def menu ():
 |2.-Agregar artículos            |
 |3.-Eliminar artículos           |
 |4.-Generar archivo de inventario|""")
-        print("¿Qué eliges?")
+        print("¿Cuál opción eliges?") 
         try:
             opcion=input(":_")
-            if opcion<0 and opcion>4:
+            if opcion<0 and opcion>4: #Si la opción no se encuentra en el rango marca error
                 input("Opción no válida")
             else:
                 break;
@@ -65,19 +65,21 @@ if log==True:
     if opcion == 3:
         try:
             c = input("\n¿Qué articulo deseas eliminar?\n>>")
-            c=c.lower()
-            if c in inventario:
+            c=c.lower() #El texto que introdujo el usuario se convierte a minúsculas
+            if c in inventario: #Si existe en el inventario se elimina
                 inventario.remove(c)
                 print("El artículo ha sido removido del inventario")
             else:
                 print("El artículo no existe en el inventario")
         except ValueError:
-            print("Escribe solo el nombre del artículo")
+            print("Escribe sólo el nombre del artículo")
     if opcion ==2:
         try:
             add=input("¿Qué artículo deseas agregar? ")
             add=add.lower()
             for i in range(len(add)):
                 inventario.append(add[i])
+        except ValueError:
+            print ("Escribe sólo letras")
                 
     
