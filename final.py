@@ -63,15 +63,21 @@ if log==True:
     menu()
     
     if opcion == 3:
-    try:
-        c = input("\n¿Qué articulo deseas eliminar?\n>>")
-        if c in inventario:
-            inventario.remove(c)
-            print("El artículo ha sido removido del inventario")
-        else:
-            print("El artículo no existe en el inventario")
-
-    except ValueError:
-        print("Escribe solo el nombre del artículo")
-    if opcion==0:
-        break
+        try:
+            c = input("\n¿Qué articulo deseas eliminar?\n>>")
+            c=c.lower()
+            if c in inventario:
+                inventario.remove(c)
+                print("El artículo ha sido removido del inventario")
+            else:
+                print("El artículo no existe en el inventario")
+        except ValueError:
+            print("Escribe solo el nombre del artículo")
+    if opcion ==2:
+        try:
+            add=input("¿Qué artículo deseas agregar? ")
+            add=add.lower()
+            for i in range(len(add)):
+                inventario.append(add[i])
+                
+    
