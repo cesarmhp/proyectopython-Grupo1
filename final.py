@@ -7,7 +7,6 @@ numproducto=[]
 inventario=open("inventario.txt","r")
 productos=inventario.readlines()
 inventario.close
-print(productos)
 inventario={}
 
 for i in range(len(productos)):
@@ -17,10 +16,8 @@ for i in range(len(productos)):
 
 for i in range(len(productos)-1):
     numproducto.append(productos[i][1])
-    print(numproducto)
     numproducto[i]=numproducto[i][:len(numproducto[i])-1]
     numproducto[len(numproducto)-1]=numproducto[len(numproducto)-1][:len(numproducto[len(numproducto)-1])]
-    print(numproducto)
     numproducto[i]=int(numproducto[i])
 numproducto[len(numproducto)-1]=int(numproducto[len(numproducto)-1])
 
