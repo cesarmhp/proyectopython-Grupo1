@@ -65,5 +65,11 @@ if log==True:
     if opcion == 3:
     try:
         c = input("\n¿Qué articulo deseas eliminar?\n>>")
-        del inventario[c]
-        print("El artículo ha sido removido del inventario")
+        if c in inventario:
+            inventario.remove(c)
+            print("El artículo ha sido removido del inventario")
+        else:
+            print("El artículo no existe en el inventario")
+
+    except ValueError:
+        print("Escribe solo el nombre del artículo")
