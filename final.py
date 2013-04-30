@@ -16,18 +16,15 @@ for i in range(len(productos)-1):
     numproducto[i]=numproducto[i][:len(numproducto[i])-1]
     numproducto[len(numproducto)-1]=numproducto[len(numproducto)-1][:len(numproducto[len(numproducto)-1])]
     numproducto[i]=int(numproducto[i])
+numproducto.append(productos[len(productos)-1][1])
 numproducto[len(numproducto)-1]=int(numproducto[len(numproducto)-1])
-print(numproducto[len(numproducto)-1])
-print(productos)
+
 for i in range(len(productos)):
     productos[i]=productos[i][0]  
-print(productos)
-print(numproducto)
 
-for i in range(len(productos)-1):
+for i in range(len(productos)):
     inventario[productos[i]]=numproducto[i]
-inventario[len(productos)-1]=numproducto[len(numproducto)-1]
-print(inventario)
+
 #=========================================TERMINA LECTURA DEL ARCHIVO Y CONVERSIÓN A DICCIONARIO=================
 
 def login():
