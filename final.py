@@ -96,24 +96,45 @@ if log==True:
     #AQUI ADENTRO DEL "IF" VA TODO EL PROGRAMA
     opcion=menu()
     
-    if opcion == 3:
-        try:
-            c = input("\n¿Qué articulo deseas eliminar?\n>>")
-            c=c.lower() #El texto que introdujo el usuario se convierte a minúsculas
-            if c in inventario: #Si existe en el inventario se elimina
-                inventario.remove(c)
-                print("El artículo ha sido removido del inventario")
-            else:
-                print("El artículo no existe en el inventario")
-        except ValueError:
-            print("Escribe sólo el nombre del artículo")
+    if opcion==5:
+        print("===================")
+        print(" ARTICULO -  #")
+        print("===================")
+        for i in (inventario):
+            print(i,"   -   ",inventario[i])
+      
     if opcion ==2:
+            llave=input("¿Qué artículo deseas agregar? ")
+            valor= int(input("¿Cuántos artículos deseas agregar? "))
+            llave=llave[0].upper()+ llave[1:].lower()
+            if llave in inventario:
+                for i in range(len(inventario)):
+                    valor=sum(valor,inventario[valor]) #Aquí me falta agregar que se sumen los artículos en caso de que se quieran agregar más del mismo
+            if llave not in inventario:
+                inventario[llave]=valor
+                    
+    if opcion == 3:
+        c = input("¿Qué articulo deseas eliminar? >>")
+        c=c[0].upper() + c[1:].lower()
         try:
-            add=input("¿Qué artículo deseas agregar? ")
-            add=add.lower()
-            for i in range(len(add)):
-                inventario.append(add[i])
+            if c in inventario:
+                print("Actualmente hay", inventario[c], c)
+                x=int(input("¿Cuántos deseas eliminar? "))
+            print(inventario([cx])) #Aquí me falta hacer que se resten los artículos en caso de que no se eliminen todos
+        except KeyError as c:
+            print("Error", c, "no se encuentra en el inventario")
         except ValueError:
-            print ("Escribe sólo letras")
+            print("Escribe solo el nombre del artículo")
+            
+    if opcion == 4:
+        try:
+            archiescri = open("inventario.txt","w")
+            for i in lista:
+                archiescri.write(str(i)+"\n")
+            archiescri.close()
+            print ("El inventario se ha guardado en el archivo")
+        except IOError:
+            print("Error. No se puede escribir en el archivo")
+        print("\n") 
                 
     
