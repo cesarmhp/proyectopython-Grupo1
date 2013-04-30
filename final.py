@@ -67,36 +67,40 @@ def login():
             
 #===================================TERMINA PROCESO DE INICIO DE SESIÓN=================================================
 
-def menu ():# Se imprimira un menu con las diferentes opciones que tendra el usuario, de las cuales elegira la que sea mejor para el
-    while True:
-        print("""==============MENU===============|
-|0.-Salir                        |
-|1.-Cargar archivo de inventario |
-|2.-Agregar artículos            |
-|3.-Eliminar artículos           |
-|4.-Generar archivo de inventario|
-|5.-Imprimir inventario          |""")
-        print("¿Cuál opción eliges?") 
-        try:
-            opcion = int(input(": "))
-            if opcion<0 and opcion>4: #Si la opción no se encuentra en el rango marcará error
-                input("Opción no válida")
-            else:
-                break;
-        except ValueError:
-            input("Sólo se aceptan números del 0 al 4 como opciones")
-        return opcion
-        #Esta es la funcion de opciones del menu
 
+def menu ():# Se imprimira un menu con las diferentes opciones que tendra el usuario, de las cuales elegira la que sea mejor para el
+    print("==============MENU===============")
+print("0.-Salir                        ")
+print("1.-Cargar archivo de inventario ")
+print("2.-Agregar artículos            ")
+print("3.-Eliminar artículos           ")
+print("4.-Generar archivo de inventario")
+print("5.-Imprimir inventario          ")
+print("¿Cuál opción eliges?")
 log = login()
 
 if log == True:
     print("Bienvenido")
     print()
+
+while True:
+    menu()
+    while True:
+        try:
+            opcion=int(input(":_"))
+            if opcion<0 or opcion>4: #Si la opción no se encuentra en el rango marcara error
+                input("Opción no válida")
+            else:
+                break;
+        except ValueError:
+            input("Sólo se aceptan números del 0 al 4 como opciones")
+        
+        #Esta es la funcion de opciones del menu
+
     #AQUI ADENTRO DEL "IF" VA TODO EL PROGRAMA
-    opcion = menu()
     if opcion == 0:
         print ("Adios!! (:")
+        break
       
     if opcion == 2:
             llave = input("¿Qué artículo deseas agregar?: ")
