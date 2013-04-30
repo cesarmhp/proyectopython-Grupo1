@@ -7,10 +7,12 @@ productos=inventario.readlines()
 inventario.close
 inventario={}
 
+#Se separa el artículo de la ccantidad
 for i in range(len(productos)):
     separador=productos[i].split(" ")
     productos[i]=separador
 
+#Se le quita el \n a el número de artículos y se convierte a enteros, queda guardado en una lista llamada numproducto
 for i in range(len(productos)-1):
     numproducto.append(productos[i][1])
     numproducto[i]=numproducto[i][:len(numproducto[i])-1]
@@ -19,14 +21,17 @@ for i in range(len(productos)-1):
 numproducto.append(productos[len(productos)-1][1])
 numproducto[len(numproducto)-1]=int(numproducto[len(numproducto)-1])
 
+#Se elimina el número de productos de la lista original quedando sólo el nombre
 for i in range(len(productos)):
     productos[i]=productos[i][0]  
 
+#Se integran las dos listas (productos y numproducto) en un diccionario llamado inventario.
 for i in range(len(productos)):
     inventario[productos[i]]=numproducto[i]
 
-#=========================================TERMINA LECTURA DEL ARCHIVO Y CONVERSIÓN A DICCIONARIO=================
+#=========================================TERMINA LECTURA DEL ARCHIVO Y CONVERSIÓN A DICCIONARIO======================
 
+#======================================COMIENZA PROCESO DE INICIO DE SESIÓN===========================================
 def login():
     acceso=0
     intento=0
@@ -53,12 +58,14 @@ def login():
                 print("")
                 print("Datos incorrectos")
                 print("")
-            break
+            break;
         if intento>=3:
             print("")
             print(" *  Las cuentas se han bloqueado porque has intentado mas de 3 veces.   *")
             return False
-            break
+            break;
+            
+#===================================TERMINA PROCESO DE INICIO DE SESIÓN=================================================
 
 def menu ():# Se imprimira un menu con las diferentes opciones que tendra el usuario, de las cuales elegira la que sea mejor para el
     while True:
