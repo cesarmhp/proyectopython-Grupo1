@@ -1,67 +1,67 @@
 #Proyecto final
 #===========================================EMPIEZA PARTE DE LECTURA DEL ARCHIVO Y CONVERTIRLO A DICCIONARIO=========
-productos=[]
-numproducto=[]
-inventario=open("inventario.txt","r")
-productos=inventario.readlines()
+productos = []
+numproducto = []
+inventario = open("inventario.txt","r")
+productos = inventario.readlines()
 inventario.close
-inventario={}
+inventario = {}
 
 #Se separa el artículo de la ccantidad
 for i in range(len(productos)):
-    separador=productos[i].split(" ")
-    productos[i]=separador
+    separador = productos[i].split(" ")
+    productos[i] = separador
 
 #Se le quita el \n a el número de artículos y se convierte a enteros, queda guardado en una lista llamada numproducto
 for i in range(len(productos)-1):
     numproducto.append(productos[i][1])
-    numproducto[i]=numproducto[i][:len(numproducto[i])-1]
-    numproducto[len(numproducto)-1]=numproducto[len(numproducto)-1][:len(numproducto[len(numproducto)-1])]
-    numproducto[i]=int(numproducto[i])
+    numproducto[i] = numproducto[i][:len(numproducto[i])-1]
+    numproducto[len(numproducto)-1] = numproducto[len(numproducto)-1][:len(numproducto[len(numproducto)-1])]
+    numproducto[i] = int(numproducto[i])
 numproducto.append(productos[len(productos)-1][1])
-numproducto[len(numproducto)-1]=int(numproducto[len(numproducto)-1])
+numproducto[len(numproducto)-1] = int(numproducto[len(numproducto)-1])
 
 #Se elimina el número de productos de la lista original quedando sólo el nombre
 for i in range(len(productos)):
-    productos[i]=productos[i][0]  
+    productos[i] = productos[i][0]  
 
 #Se integran las dos listas (productos y numproducto) en un diccionario llamado inventario.
 for i in range(len(productos)):
-    inventario[productos[i]]=numproducto[i]
+    inventario[productos[i]] = numproducto[i]
 
 #=========================================TERMINA LECTURA DEL ARCHIVO Y CONVERSIÓN A DICCIONARIO======================
 
 #======================================COMIENZA PROCESO DE INICIO DE SESIÓN===========================================
 def login():
-    acceso=0
-    intento=0
-    while acceso==0:
-        archLeer=open("usuariocontraseña.txt","r")#Abro el archivo de texto            #Comienza editado de Juan Mireles
-        articulos=(archLeer.readlines())#Guardo su contenido en una variable           #El archivo en el cual se guarde el usuario y contraseña
-        archLeer.close()#Cierro el archivo                                             #Debe de llamarse "usuariocontraseña" y solo puede contener como maximo
-        articulos2=[]#Creo variable en blanco                                          #2 nombres de usuario con su respectiva contraseña 
-        for i in range(len(articulos)):#Elimino los \n que me apareceran.              # Y tambien la contraseña debe de estar separada por un espacio despues del usuario
-            articulos2.append(articulos[i][0:len(articulos[i])-1])                     #en la misma linea que esta. Ejem: Usuario contraseña
-        palabras=""                                                                    #                                 Usuario2 contraseña2
+    acceso = 0
+    intento = 0
+    while acceso == 0:
+        archLeer = open("usuariocontraseña.txt","r")#Abro el archivo de texto            #Comienza editado de Juan Mireles
+        articulos = (archLeer.readlines())#Guardo su contenido en una variable           #El archivo en el cual se guarde el usuario y contraseña
+        archLeer.close()#Cierro el archivo                                               #Debe de llamarse "usuariocontraseña" y solo puede contener como maximo
+        articulos2 = []#Creo variable en blanco                                          #2 nombres de usuario con su respectiva contraseña 
+        for i in range(len(articulos)):#Elimino los \n que me apareceran                 # Y tambien la contraseña debe de estar separada por un espacio despues del usuario
+            articulos2.append(articulos[i][0:len(articulos[i])-1])                       #en la misma linea que esta. Ejem: Usuario contraseña
+        palabras = ""                                                                    #                                 Usuario2 contraseña2
         for i in range(len(articulos2)):
-            palabras=palabras+articulos[i]
-        palabras=palabras.split()
-        usuario=input("Usuario: ")
-        password=input("Password: ")
+            palabras = palabras+articulos[i]
+        palabras = palabras.split()
+        usuario = input("Usuario: ")
+        password = input("Password: ")
 
         while intento <= 3:
             if usuario==palabras[0] and password==palabras[1] or usuario==palabras[2] and password==palabras[3]:   #Termina editado de Juan Mireles.
                 print("")
                 return True
             else:
-                intento=intento+1
+                intento = intento + 1
                 print("")
                 print("Datos incorrectos")
                 print("")
             break;
-        if intento>=3:
+        if intento >= 3:
             print("")
-            print(" *  Las cuentas se han bloqueado porque has intentado mas de 3 veces.   *")
+            print(" *  Las cuentas se han bloqueado porque has intentado mas de 3 veces   *")
             return False
             break;
             
@@ -78,8 +78,8 @@ def menu ():# Se imprimira un menu con las diferentes opciones que tendra el usu
 |5.-Imprimir inventario          |""")
         print("¿Cuál opción eliges?") 
         try:
-            opcion=int(input(":_"))
-            if opcion<0 and opcion>4: #Si la opción no se encuentra en el rango marcara error
+            opcion = int(input(": "))
+            if opcion<0 and opcion>4: #Si la opción no se encuentra en el rango marcará error
                 input("Opción no válida")
             else:
                 break;
@@ -88,46 +88,38 @@ def menu ():# Se imprimira un menu con las diferentes opciones que tendra el usu
         return opcion
         #Esta es la funcion de opciones del menu
 
-log= login()
+log = login()
 
 if log == True:
     print("Bienvenido")
     print()
     #AQUI ADENTRO DEL "IF" VA TODO EL PROGRAMA
-    opcion=menu()
+    opcion = menu()
     if opcion == 0:
         print ("Adios!! (:")
-        break
-        
-    if opcion == 5:
-        print("===================")
-        print(" ARTICULO -  #")
-        print("===================")
-        for i in (inventario):
-            print(i,"   -   ",inventario[i])
       
     if opcion == 2:
-            llave=input("¿Qué artículo deseas agregar? ")
-            valor= int(input("¿Cuántos artículos deseas agregar? "))
-            llave=llave[0].upper()+ llave[1:].lower()
+            llave = input("¿Qué artículo deseas agregar?: ")
+            valor = int(input("¿Cuántos artículos deseas agregar?: "))
+            llave = llave[0].upper()+ llave[1:].lower()
             if llave in inventario:
                 for i in range(len(inventario)):
-                    valor=sum(valor,inventario[valor]) #Aquí me falta agregar que se sumen los artículos en caso de que se quieran agregar más del mismo
+                    valor = sum(valor,inventario[valor]) #Aquí me falta agregar que se sumen los artículos en caso de que se quieran agregar más del mismo
             if llave not in inventario:
-                inventario[llave]=valor
+                inventario[llave] = valor
                     
     if opcion == 3:
-        c = input("¿Qué articulo deseas eliminar? >>")
-        c=c[0].upper() + c[1:].lower()
+        c = input("¿Qué articulo deseas eliminar?: ")
+        c = c[0].upper() + c[1:].lower()
         try:
             if c in inventario:
                 print("Actualmente hay", inventario[c], c)
-                x=int(input("¿Cuántos deseas eliminar? "))
+                x = int(input("¿Cuántos deseas eliminar?: "))
             print(inventario([cx])) #Aquí me falta hacer que se resten los artículos en caso de que no se eliminen todos
         except KeyError as c:
             print("Error", c, "no se encuentra en el inventario")
         except ValueError:
-            print("Escribe solo el nombre del artículo")
+            print("Escribe sólo el nombre del artículo")
             
     if opcion == 4:
         try:
@@ -140,4 +132,9 @@ if log == True:
             print("Error. No se puede escribir en el archivo")
         print("\n") 
                 
-    
+    if opcion == 5:
+        print("===================")
+        print(" ARTICULO -  #")
+        print("===================")
+        for i in (inventario):
+            print(i,"   -   ",inventario[i])
