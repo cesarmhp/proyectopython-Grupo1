@@ -88,22 +88,25 @@ def menu ():# Se imprimira un menu con las diferentes opciones que tendra el usu
         return opcion
         #Esta es la funcion de opciones del menu
 
-log=login()
+log= login()
 
-if log==True:
+if log == True:
     print("Bienvenido")
     print()
     #AQUI ADENTRO DEL "IF" VA TODO EL PROGRAMA
     opcion=menu()
-    
-    if opcion==5:
+    if opcion == 0:
+        print ("Adios!! (:")
+        break
+        
+    if opcion == 5:
         print("===================")
         print(" ARTICULO -  #")
         print("===================")
         for i in (inventario):
             print(i,"   -   ",inventario[i])
       
-    if opcion ==2:
+    if opcion == 2:
             llave=input("¿Qué artículo deseas agregar? ")
             valor= int(input("¿Cuántos artículos deseas agregar? "))
             llave=llave[0].upper()+ llave[1:].lower()
