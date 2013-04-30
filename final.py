@@ -77,7 +77,7 @@ def menu ():# Se imprimira un menu con las diferentes opciones que tendra el usu
 |4.-Generar archivo de inventario|""")
         print("¿Cuál opción eliges?") 
         try:
-            opcion=input(":_")
+            opcion=int(input(":_"))
             if opcion<0 and opcion>4: #Si la opción no se encuentra en el rango marcara error
                 input("Opción no válida")
             else:
@@ -93,7 +93,7 @@ if log==True:
     print("Bienvenido")
     print()
     #AQUI ADENTRO DEL "IF" VA TODO EL PROGRAMA
-    menu()
+    opcion=menu()
     
     if opcion == 3:
         try:
