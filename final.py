@@ -74,7 +74,8 @@ def menu ():# Se imprimira un menu con las diferentes opciones que tendra el usu
 |1.-Cargar archivo de inventario |
 |2.-Agregar artículos            |
 |3.-Eliminar artículos           |
-|4.-Generar archivo de inventario|""")
+|4.-Generar archivo de inventario|
+|5.-Imprimir inventario          |""")
         print("¿Cuál opción eliges?") 
         try:
             opcion=int(input(":_"))
