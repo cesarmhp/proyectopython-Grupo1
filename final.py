@@ -81,8 +81,8 @@ print("3.-Eliminar artículos           ")
 print("4.-Generar archivo de inventario")
 print("5.-Imprimir inventario          ")
 print("¿Cuál opción eliges?")
-log = login()
 
+log = login()
 if log == True:
     print("Bienvenido")
     print()
