@@ -35,7 +35,7 @@ for i in range(len(productos)):
 
 #=========================================TERMINA LECTURA DEL ARCHIVO Y CONVERSIÓN A DICCIONARIO======================
 
-#======================================COMIENZA PROCESO DE INICIO DE SESIÓN===========================================
+#======================================COMIENZA FUNCION DE PROCESO DE INICIO DE SESIÓN===========================================
 def login():
     acceso = 0
     intento = 0
@@ -69,7 +69,7 @@ def login():
             return False
             break;
             
-#===================================TERMINA PROCESO DE INICIO DE SESIÓN=================================================
+#===================================TERMINA FUNCION DE PROCESO DE INICIO DE SESIÓN=================================================
 
 #===============================EMPIEZA FUNCION DEL MENU===============================================================
 def menu (): #Se imprimira un menu con las diferentes opciones que tendra el usuario, de las cuales elegira la que sea mejor para el
@@ -92,14 +92,15 @@ def menu (): #Se imprimira un menu con las diferentes opciones que tendra el usu
         input("Sólo se aceptan números del 0 al 4 como opciones")
     return opcion
 
+#================================================TERMINA FUNCION DEL MENU==========================================
+
+#*******************************AQUI EMPIEZA EL PROGRAMA***************************************************************
 
 log = login()
 if log == True:
     print("Bienvenido")
     print()
-#================================================TERMINA FUNCION DEL MENU==========================================
-
-#*******************************AQUI EMPIEZA EL PROGRAMA***************************************************************
+    
 while True:
     opcion=menu()
 
