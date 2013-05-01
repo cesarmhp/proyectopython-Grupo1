@@ -71,7 +71,7 @@ def login():
             
 #===================================TERMINA PROCESO DE INICIO DE SESIÓN=================================================
 
-
+#===============================EMPIEZA FUNCION DEL MENU===============================================================
 def menu (): #Se imprimira un menu con las diferentes opciones que tendra el usuario, de las cuales elegira la que sea mejor para el
     print("==============MENU===============")
     print("0.-Salir ")
@@ -90,13 +90,14 @@ def menu (): #Se imprimira un menu con las diferentes opciones que tendra el usu
                 break;
     except ValueError:
         input("Sólo se aceptan números del 0 al 4 como opciones")
-    return o
+    return opcion
 
 
 log = login()
 if log == True:
     print("Bienvenido")
     print()
+#================================================TERMINA FUNCION DEL MENU==========================================
 
 #*******************************AQUI EMPIEZA EL PROGRAMA***************************************************************
 while True:
