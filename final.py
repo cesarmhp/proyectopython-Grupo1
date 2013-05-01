@@ -100,7 +100,7 @@ if log == True:
 
 #*******************************AQUI EMPIEZA EL PROGRAMA***************************************************************
 while True:
-    oopcion=menu()
+    opcion=menu()
 
     if opcion == 0:
         print ("Adios!! (:")
