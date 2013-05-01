@@ -84,7 +84,7 @@ def menu (): #Se imprimira un menu con las diferentes opciones que tendra el usu
     try:
         while True:
             opcion=int(input(":_"))
-            if opcion<0 or opcion>4: #Si la opción no se encuentra en el rango marcara error
+            if opcion<0 or opcion>5: #Si la opción no se encuentra en el rango marcara error
                 input("Opción no válida")
             else:
                 break;
