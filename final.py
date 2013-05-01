@@ -102,16 +102,16 @@ if log == True:
     while True:
         opcion=menu()
 
-        if opcion == 0:
-            print ("Adios!! (:")
+        if opcion == 0:#=========================TERMINADO============
+            input ("\nPresione ENTER para salir")
             break
       
-        if opcion == 2:
+        if opcion == 2:#===============================TERMINADO======
                 llave = input("¿Qué artículo deseas agregar?: ")
                 valor = int(input("¿Cuántos artículos deseas agregar?: "))
                 llave = llave[0].upper()+ llave[1:].lower()
                 if llave in inventario:
-                    inventario[llave] = inventario[llave]+ valor #Aquí me falta agregar que se sumen los artículos en caso de que se quieran agregar más del mismo
+                    inventario[llave] = inventario[llave]+ valor
                 if llave not in inventario:
                     inventario[llave] = valor
                     
@@ -139,7 +139,7 @@ if log == True:
                 print("Error. No se puede escribir en el archivo")
             print("\n")
                 
-        if opcion == 5:
+        if opcion == 5:#================TERMINADO==============
             print("\n===================")
             print(" ARTICULO - #")
             print("===================")
