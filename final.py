@@ -7,7 +7,7 @@ try:
     inventario = open("inventario.txt","r")
     productos = inventario.readlines()
     inventario.close
-    inventario = {}
+    inventario = []
 except IOError:
     print ("El archivo no se encuentra")
 
@@ -107,6 +107,8 @@ while True:
     if opcion == 0:
         print ("Adios!! (:")
         break
+    if opcion == 1:
+        print(inventario) #imprimi archivo carga el archivo
       
     if opcion == 2:
             llave = input("¿Qué artículo deseas agregar?: ")
