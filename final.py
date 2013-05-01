@@ -1,11 +1,15 @@
 #Proyecto final
 #===========================================EMPIEZA PARTE DE LECTURA DEL ARCHIVO Y CONVERTIRLO A DICCIONARIO=========
-productos = []
-numproducto = []
-inventario = open("inventario.txt","r")
-productos = inventario.readlines()
-inventario.close
-inventario = {}
+
+try:
+    productos = []
+    numproducto = []
+    inventario = open("inventario.txt","r")
+    productos = inventario.readlines()
+    inventario.close
+    inventario = {}
+except IOError:
+    print ("El archivo no se encuentra")
 
 #Se separa el artículo de la ccantidad
 for i in range(len(productos)):
