@@ -72,36 +72,36 @@ def login():
 #===================================TERMINA PROCESO DE INICIO DE SESIÓN=================================================
 
 
-def menu ():# Se imprimira un menu con las diferentes opciones que tendra el usuario, de las cuales elegira la que sea mejor para el
+def menu (): #Se imprimira un menu con las diferentes opciones que tendra el usuario, de las cuales elegira la que sea mejor para el
     print("==============MENU===============")
-print("0.-Salir                        ")
-print("1.-Cargar archivo de inventario ")
-print("2.-Agregar artículos            ")
-print("3.-Eliminar artículos           ")
-print("4.-Generar archivo de inventario")
-print("5.-Imprimir inventario          ")
-print("¿Cuál opción eliges?")
+    print("0.-Salir ")
+    print("1.-Cargar archivo de inventario ")
+    print("2.-Agregar artículos ")
+    print("3.-Eliminar artículos ")
+    print("4.-Generar archivo de inventario")
+    print("5.-Imprimir inventario ")
+    print("¿Cuál opción eliges?")
+    try:
+        while True:
+            opcion=int(input(":_"))
+            if opcion<0 or opcion>4: #Si la opción no se encuentra en el rango marcara error
+                input("Opción no válida")
+            else:
+                break;
+    except ValueError:
+        input("Sólo se aceptan números del 0 al 4 como opciones")
+    return o
+
 
 log = login()
 if log == True:
     print("Bienvenido")
     print()
 
+#*******************************AQUI EMPIEZA EL PROGRAMA***************************************************************
 while True:
-    menu()
-    while True:
-        try:
-            opcion=int(input(":_"))
-            if opcion<0 or opcion>4: #Si la opción no se encuentra en el rango marcara error
-                input("Opción no válida")
-            else:
-                break;
-        except ValueError:
-            input("Sólo se aceptan números del 0 al 4 como opciones")
-        
-        #Esta es la funcion de opciones del menu
+    oopcion=menu()
 
-    #AQUI ADENTRO DEL "IF" VA TODO EL PROGRAMA
     if opcion == 0:
         print ("Adios!! (:")
         break
@@ -138,11 +138,14 @@ while True:
             print ("El inventario se ha guardado en el archivo")
         except IOError:
             print("Error. No se puede escribir en el archivo")
-        print("\n") 
+        print("\n")
                 
     if opcion == 5:
         print("===================")
-        print(" ARTICULO -  #")
+        print(" ARTICULO - #")
         print("===================")
         for i in (inventario):
-            print(i,"   -   ",inventario[i])
+            print(i," - ",inventario[i])
+
+
+
