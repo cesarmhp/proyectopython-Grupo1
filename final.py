@@ -11,7 +11,7 @@ try:
     inventario = open("inventario.txt","r")
     productos = inventario.readlines()
     inventario.close
-    inventario = []
+    inventario = {}
 except IOError:
     print ("El archivo no se encuentra")
 
