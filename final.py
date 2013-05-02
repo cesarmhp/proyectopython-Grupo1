@@ -113,7 +113,7 @@ if log == True:
                 archiescri.close()
                 print ("El inventario se ha guardado en el archivo")
             except IOError:
-                print("Error. No se puede escribir en el archivo")
+                print("ERROR. NO SE PUEDE ESCRIBIR EN EL ARCHIVO")
             print("\n")
                 
         if opcion == 5:#================TERMINADO==============
