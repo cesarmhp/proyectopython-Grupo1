@@ -103,7 +103,8 @@ if log == True:
                 print("Error", c, "no se encuentra en el inventario")
             except ValueError:
                 print("Escribe sólo el nombre del artículo")
-            #ya elimina el producto del inventario, pero sigue diciendo lo del error en la excepcion pero dijo el profe que estaba bien
+            #Ya elimina el producto del inventario, pero sigue diciendo lo del error en la excepcion pero dijo el profe que estaba bien
+            #Opcion 3 TERMINADA NO!! le muevan
         if opcion == 4:
             try:
                 archiescri = open("inventario.txt","w")
