@@ -44,11 +44,10 @@ for i in range(len(productos)):
 def menu (): #Se imprimira un menu con las diferentes opciones que tendra el usuario, de las cuales elegira la que sea mejor para el
     print("==============MENU===============")
     print("0.-Salir ")
-    print("1.-Cargar archivo de inventario ")
-    print("2.-Agregar artículos ")
-    print("3.-Eliminar artículos ")
-    print("4.-Generar archivo de inventario")
-    print("5.-Imprimir inventario ")
+    print("1.-Agregar artículos")
+    print("2.-Eliminar artículos ")
+    print("3.-Generar archivo de inventario ")
+    print("4.-Imprimir inventario")
     print("¿Cuál opción eliges?")
     while True:
         try:
@@ -75,10 +74,8 @@ if log == True:
         if opcion == 0:#=========================TERMINADO============
             input ("\nPresione ENTER para salir")
             break
-        if opcion == 1:
-            print(inventario) #se imprime el archivo cargado
       
-        if opcion == 2:#===============================TERMINADO======
+        if opcion == 1:#===============================TERMINADO======
                 llave = input("¿Qué artículo deseas agregar?: ")
                 valor = int(input("¿Cuántos artículos deseas agregar?: "))
                 llave = llave[0].upper()+ llave[1:].lower()
@@ -87,7 +84,7 @@ if log == True:
                 if llave not in inventario:
                     inventario[llave] = valor
                     
-        if opcion == 3:
+        if opcion == 2:
             c = input("¿Qué articulo deseas eliminar?: ")
             c = c[0].upper() + c[1:].lower()
             try:
@@ -105,7 +102,7 @@ if log == True:
                 print("Escribe sólo el nombre del artículo")
             #Ya elimina el producto del inventario, pero sigue diciendo lo del error en la excepcion pero dijo el profe que estaba bien
             #Opcion 3 TERMINADA NO!! le muevan
-        if opcion == 4:
+        if opcion == 3:
             try:
                 archiescri = open("inventario.txt","w")
                 for i in inventario:
@@ -116,7 +113,7 @@ if log == True:
                 print("ERROR. NO SE PUEDE ESCRIBIR EN EL ARCHIVO")
             print("\n")
                 
-        if opcion == 5:#================TERMINADO==============
+        if opcion == 4:#================TERMINADO==============
             print("\n===================")
             print(" ARTICULO - #")
             print("===================")
