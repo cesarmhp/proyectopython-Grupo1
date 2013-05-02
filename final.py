@@ -26,8 +26,8 @@ for i in range(len(productos)-1):
     numproducto[i] = numproducto[i][:len(numproducto[i])-1]
     numproducto[len(numproducto)-1] = numproducto[len(numproducto)-1][:len(numproducto[len(numproducto)-1])]
     numproducto[i] = int(numproducto[i])
-numproducto.append(productos[len(productos)-1][1])
-numproducto[len(numproducto)-1] = int(numproducto[len(numproducto)-1])
+    numproducto.append(productos[len(productos)-1][1])
+    numproducto[len(numproducto)-1] = int(numproducto[len(numproducto)-1])
 
 #Se elimina el número de productos de la lista original quedando sólo el nombre
 for i in range(len(productos)):
@@ -103,7 +103,7 @@ if log == True:
         if opcion == 4:
             try:
                 archiescri = open("inventario.txt","w")
-                for i in lista:
+                for i in inventario:
                     archiescri.write(str(i)+"\n")
                 archiescri.close()
                 print ("El inventario se ha guardado en el archivo")
