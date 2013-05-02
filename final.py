@@ -94,7 +94,8 @@ if log == True:
                 if c in inventario:
                     print("Actualmente hay", inventario[c], c)
                     x = int(input("¿Cuántos deseas eliminar?: "))
-                print(inventario([cx])) #Aquí me falta hacer que se resten los artículos en caso de que no se eliminen todos
+                    inveterio[c]=inventario[c]-x
+                print(inventario[c],c) #Ya esta que se elimine el numero de productos que se deee (Daniel Fdz y Emanuel Valdez)
             except KeyError as c:
                 print("Error", c, "no se encuentra en el inventario")
             except ValueError:
