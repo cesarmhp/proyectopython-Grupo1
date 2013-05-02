@@ -95,12 +95,15 @@ if log == True:
                     print("Actualmente hay", inventario[c], c)
                     x = int(input("¿Cuántos deseas eliminar?: "))
                     inveterio[c]=inventario[c]-x
+                    if inventario[c] <= 0:
+                        del inventario[c]
+                        print("Ya no se encuentra en el inventario")
                 print(inventario[c],c) #Ya esta que se elimine el numero de productos que se deee (Daniel Fdz y Emanuel Valdez)
             except KeyError as c:
                 print("Error", c, "no se encuentra en el inventario")
             except ValueError:
                 print("Escribe sólo el nombre del artículo")
-            
+            #ya elimina el producto del inventario, pero sigue diciendo lo del error en la excepcion pero dijo el profe que estaba bien
         if opcion == 4:
             try:
                 archiescri = open("inventario.txt","w")
