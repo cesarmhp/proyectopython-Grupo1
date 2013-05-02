@@ -26,8 +26,8 @@ for i in range(len(productos)-1):
     numproducto[i] = numproducto[i][:len(numproducto[i])-1]
     numproducto[len(numproducto)-1] = numproducto[len(numproducto)-1][:len(numproducto[len(numproducto)-1])]
     numproducto[i] = int(numproducto[i])
-    numproducto.append(productos[len(productos)-1][1])
-    numproducto[len(numproducto)-1] = int(numproducto[len(numproducto)-1])
+numproducto.append(productos[len(productos)-1][1])
+numproducto[len(numproducto)-1] = int(numproducto[len(numproducto)-1])
 
 #Se elimina el número de productos de la lista original quedando sólo el nombre
 for i in range(len(productos)):
@@ -50,15 +50,15 @@ def menu (): #Se imprimira un menu con las diferentes opciones que tendra el usu
     print("4.-Generar archivo de inventario")
     print("5.-Imprimir inventario ")
     print("¿Cuál opción eliges?")
-    try:
-        while True:
+    while True:
+        try:
             opcion=int(input(":_"))
             if opcion<0 or opcion>5: #Si la opción no se encuentra en el rango marcara error
                 input("Opción no válida")
             else:
                 break;
-    except ValueError:
-        input("Sólo se aceptan números del 0 al 4 como opciones")
+        except ValueError:
+            input("Sólo se aceptan números del 0 al 4 como opciones")
     return opcion
 
 #================================================TERMINA FUNCION DEL MENU==========================================
@@ -103,7 +103,7 @@ if log == True:
         if opcion == 4:
             try:
                 archiescri = open("inventario.txt","w")
-                for i in inventario:
+                for i in lista:
                     archiescri.write(str(i)+"\n")
                 archiescri.close()
                 print ("El inventario se ha guardado en el archivo")
