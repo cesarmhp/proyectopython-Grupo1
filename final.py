@@ -1,4 +1,4 @@
-#Proyecto final
+Proyecto final
 
 #======================================COMIENZA FUNCION DE PROCESO DE INICIO DE SESIÓN===========================================
 from login import login            
@@ -34,7 +34,7 @@ for i in range(len(productos)):
     productos[i] = productos[i][0]
 
 #Se integran las dos listas (productos y numproducto) en un diccionario llamado inventario.
-for i in range(len(productos)):
+for i in range(len(productos)-1):
     inventario[productos[i]] = numproducto[i]
 
 #=========================================TERMINA LECTURA DEL ARCHIVO Y CONVERSIÓN A DICCIONARIO======================
@@ -91,7 +91,7 @@ if log == True:
                 if c in inventario:
                     print("Actualmente hay", inventario[c], c)
                     x = int(input("¿Cuántos deseas eliminar?: "))
-                    inveterio[c]=inventario[c]-x
+                    inventario[c]=inventario[c]-x
                     if inventario[c] <= 0:
                         del inventario[c]
                         print("Ya no se encuentra en el inventario")
@@ -106,7 +106,7 @@ if log == True:
             try:
                 archiescri = open("inventario.txt","w")
                 for i in inventario:
-                    archiescri.write(str(i)+"\n")
+                    archiescri.write(str(i)+" "+str(inventario[i])+"\n")
                 archiescri.close()
                 print ("El inventario se ha guardado en el archivo")
             except IOError:
