@@ -1,4 +1,4 @@
-Proyecto final
+#Proyecto final
 
 #======================================COMIENZA FUNCION DE PROCESO DE INICIO DE SESIÓN===========================================
 from login import login            
@@ -34,7 +34,7 @@ for i in range(len(productos)):
     productos[i] = productos[i][0]
 
 #Se integran las dos listas (productos y numproducto) en un diccionario llamado inventario.
-for i in range(len(productos)-1):
+for i in range(len(productos)):
     inventario[productos[i]] = numproducto[i]
 
 #=========================================TERMINA LECTURA DEL ARCHIVO Y CONVERSIÓN A DICCIONARIO======================
