@@ -21,13 +21,14 @@ for i in range(len(productos)):
     productos[i] = separador
 
 #Se le quita el \n a el número de artículos y se convierte a enteros, queda guardado en una lista llamada numproducto
-for i in range(len(productos)-1):
-    numproducto.append(productos[i][1])
-    numproducto[i] = numproducto[i][:len(numproducto[i])-1]
-    numproducto[len(numproducto)-1] = numproducto[len(numproducto)-1][:len(numproducto[len(numproducto)-1])]
-    numproducto[i] = int(numproducto[i])
-numproducto.append(productos[len(productos)-1][1])
-numproducto[len(numproducto)-1] = int(numproducto[len(numproducto)-1])
+if len(productos)>0:
+    for i in range(len(productos)-1):
+        numproducto.append(productos[i][1])
+        numproducto[i] = numproducto[i][:len(numproducto[i])-1]
+        numproducto[len(numproducto)-1] = numproducto[len(numproducto)-1][:len(numproducto[len(numproducto)-1])]
+        numproducto[i] = int(numproducto[i])
+    numproducto.append(productos[len(productos)-1][1])
+    numproducto[len(numproducto)-1] = int(numproducto[len(numproducto)-1])
 
 #Se elimina el número de productos de la lista original quedando sólo el nombre
 for i in range(len(productos)):
@@ -118,6 +119,7 @@ if log == True:
             print("===================")
             for i in (inventario):
                 print(i," - ",inventario[i])
+
 
 
 
