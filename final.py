@@ -26,8 +26,8 @@ for i in range(len(productos)-1):
     numproducto[i] = numproducto[i][:len(numproducto[i])-1]
     numproducto[len(numproducto)-1] = numproducto[len(numproducto)-1][:len(numproducto[len(numproducto)-1])]
     numproducto[i] = int(numproducto[i])
-    numproducto.append(productos[len(productos)-1][1])
-    numproducto[len(numproducto)-1] = int(numproducto[len(numproducto)-1])
+numproducto.append(productos[len(productos)-1][1])
+numproducto[len(numproducto)-1] = int(numproducto[len(numproducto)-1])
 
 #Se elimina el número de productos de la lista original quedando sólo el nombre
 for i in range(len(productos)):
@@ -36,7 +36,6 @@ for i in range(len(productos)):
 #Se integran las dos listas (productos y numproducto) en un diccionario llamado inventario.
 for i in range(len(productos)):
     inventario[productos[i]] = numproducto[i]
-
 #=========================================TERMINA LECTURA DEL ARCHIVO Y CONVERSIÓN A DICCIONARIO======================
 
 
@@ -71,7 +70,6 @@ if log == True:
     while True:
         opcion=menu()
 
-
         if opcion == 0:#=========================TERMINADO============
             input ("\nPresione ENTER para salir")
             break
@@ -84,9 +82,6 @@ if log == True:
                     inventario[llave] = inventario[llave]+ valor
                 if llave not in inventario:
                     inventario[llave] = valor
-
-
-
                     
         if opcion == 2:
             c = input("¿Qué articulo deseas eliminar?: ")
@@ -123,7 +118,6 @@ if log == True:
             print("===================")
             for i in (inventario):
                 print(i," - ",inventario[i])
-
 
 
 
