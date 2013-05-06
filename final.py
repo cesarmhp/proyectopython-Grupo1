@@ -71,6 +71,7 @@ if log == True:
     while True:
         opcion=menu()
 
+
         if opcion == 0:#=========================TERMINADO============
             input ("\nPresione ENTER para salir")
             break
@@ -83,6 +84,9 @@ if log == True:
                     inventario[llave] = inventario[llave]+ valor
                 if llave not in inventario:
                     inventario[llave] = valor
+
+
+
                     
         if opcion == 2:
             c = input("¿Qué articulo deseas eliminar?: ")
