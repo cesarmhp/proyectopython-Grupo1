@@ -1,0 +1,36 @@
+
+        try:
+            opcion=int(input(":_"))
+            if opcion<0 or opcion>5: #Si la opción no se encuentra en el rango marcara error
+                input("Opción no válida")
+            else:
+                break;
+        except ValueError:
+            input("Sólo se aceptan números del 0 al 4 como opciones")
+    return opcion
+
+#================================================TERMINA FUNCION DEL MENU==========================================
+
+#*******************************AQUI EMPIEZA EL PROGRAMA***************************************************************
+
+log = login()
+if log == True:
+    print("Bienvenido")
+    print()
+    while True:
+        opcion=menu()
+
+        if opcion == 0:#=========================TERMINADO============
+            input ("\nPresione ENTER para salir")
+            break
+      
+        if opcion == 1:#===============================TERMINADO======
+                llave = input("¿Qué artículo deseas agregar?: ")
+                valor = int(input("¿Cuántos artículos deseas agregar?: "))
+                llave = llave[0].upper()+ llave[1:].lower()
+                if llave in inventario:
+                    inventario[llave] = inventario[llave]+ valor
+                if llave not in inventario:
+                    inventario[llave] = valor
+                    
+      
